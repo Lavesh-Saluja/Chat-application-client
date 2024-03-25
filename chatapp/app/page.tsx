@@ -168,7 +168,7 @@ const chats =useLiveQuery<Chat[]>(
                   {(chats!==undefined && chats.length!=0)?
                 chats.map((obj) => {
                   return (<>
-                    <MessageCard message={obj} isMyMessage={localStorage.getItem("MyPhone").toString()===obj.sender}></MessageCard>
+                    {/* <MessageCard message={obj} isMyMessage={localStorage.getItem("MyPhone").toString()===obj.sender}></MessageCard> */}
                   </>)
                 }
                 )
