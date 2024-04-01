@@ -22,7 +22,11 @@ const LoginPage = () => {
       console.log(response);
       if (response.ok) {
         setIsOtpSent(true);
-      } else {
+      } else if (response.status == 422) {
+        router.push("/register");
+        
+      }
+      else {
         console.error('Failed to send phone number:', response.statusText);
       }
     } catch (error:any) {
@@ -44,8 +48,14 @@ const LoginPage = () => {
       
       if (response.status == 200) {
         
-        localStorage.setItem("MyPhone",phoneNumber);
-        console.log("sdsd", document.cookie);
+        localStorage.setItem("MyPhone", phoneNumber);
+        
+       const data = await response.json();
+        const token = data.token;
+        // Store token in localStorage
+        localStorage.setItem('MyToken', token);
+        console.log(localStorage.getItem('MyToken'));
+        router.push("/")
 
       } else {
         console.error('Failed to send phone number:', response.statusText);

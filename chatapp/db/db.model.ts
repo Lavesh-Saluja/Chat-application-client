@@ -11,13 +11,14 @@ export interface Message {
 export interface Contact {
   number: string; // Changed to string to match other fields
   name: string;
+  unreadMessages: boolean;
 }
 
 const db = new Dexie("chatDatabase");
 
-db.version(4.1).stores({
+db.version(4.2).stores({
   chats: 'id, message, sender, receiver, timestamp',
-  contacts: ' number, name',
+  contacts: ' number, name, unreadMessages',
 });
 
 export const chatTable = db.table('chats');
