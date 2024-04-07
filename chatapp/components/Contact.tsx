@@ -16,7 +16,7 @@ const Contact: React.FC<ContactProps> = ({ name, img, number, onClick, hasUnread
         <div className={`h-16 border-b-2 border-gray-200 p-3 flex justify-start items-center ${selected ? 'bg-gray-200' : ''}`} onClick={() => { onClick(number) }}>
              
             <div className="flex justify-center items-center">
-                <Image className="w-10 rounded-3xl" alt="Profile Pic" src={img} width={100} height={100} />
+                <Image className="w-12 rounded-full h-12" alt="Profile Pic" src={img} width={100} height={100} />
             </div>
             <div className="w-[100%] flex justify-start items-center ml-10">
                 <div>{name==""?number:name}</div>

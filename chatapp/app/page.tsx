@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Contact from "../components/Contact";
-import img from "../public/laveshPP.jpg"
+import img from "../public/PP.jpg"
 import { useState, useEffect, SetStateAction, useRef } from "react";
 import addChat,{ fetchChatsByNumber,addContact,updateContactName,updateContactUnreadMessage } from "@/db/db.function";
 import { Message,chatTable,contactsTable,Contact as contactType } from "@/db/db.model"
@@ -255,7 +255,7 @@ const chats =useLiveQuery(
           }
           {
             !(activeNumber=="")?
-            <div id="Textbox" className="flex justify-center items-center h-16 bg-green-500">
+            <div id="Textbox" className="flex justify-center items-center h-[60px] bg-green-500">
   <input
     type="text"
                     className="w-[80%] h-10 border-black border-2 rounded-md"
